@@ -208,3 +208,4 @@ __marimo__/
 
 # Test output
 test-trainer/
+sst2-bert-finetuned/

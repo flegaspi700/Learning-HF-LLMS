@@ -1,12 +1,74 @@
 # Learning Hugging Face LLMs
 
-My personal learning journey to understand and work with Large Language Models using the Hugging Face ecosystem. This repository contains my experiments, notes, and practice code as I learn how to use and fine-tune LLMs.
+My hands-on journey learning Large Language Models with the Hugging Face ecosystem. This repository documents real experiments, working code, and practical lessons learned while exploring LLM fine-tuning and deployment.
 
 ## What's Here
 
-- **Text Generation Examples** - Testing models like Meta-Llama-3-8B-Instruct
-- **Fine-Tuning Experiments** - Learning to adapt models for specific tasks
-- **Framework Comparisons** - Notes on SFTTrainer, Unsloth, Axolotl, and TorchTune
-- **Practical Troubleshooting** - Solutions to common issues I've encountered
+### 🚀 **Working Examples**
+- **`test_llama.py`** - Interactive text generation with Meta-Llama-3-8B-Instruct
+- **`fine_tune_sst2.ipynb`** - Complete BERT fine-tuning pipeline for sentiment analysis
+- **End-to-end workflows** from data loading to model testing
 
-This is a learning repository focused on hands-on experimentation with transformers, tokenization, model training, and the broader Hugging Face toolkit.
+### 📚 **Learning Materials**
+- **`fine_tuning_notes.md`** - Comparison of popular fine-tuning frameworks (SFTTrainer, Unsloth, Axolotl, TorchTune)
+- **Real examples** of parameter tuning and precision management
+- **Troubleshooting guides** for common training issues
+
+### 🛠 **Practical Solutions**
+- **`git_troubleshooting_summary.txt`** - Git workflows for handling large model files
+- **Device management patterns** using `device_map="auto"` and `torch_dtype` configurations
+- **Interactive prompting** examples following project conventions
+
+## Key Learning Areas
+
+### **Model Usage & Inference**
+- Loading models with Hugging Face model hub identifiers
+- Text generation pipelines with customizable parameters (`top_k`, `temperature`, `max_length`)
+- Device-aware model deployment for CPU/GPU environments
+
+### **Fine-Tuning Workflows**
+- **Dataset handling** with `datasets` library (SST-2, GLUE tasks)
+- **Training configuration** with `TrainingArguments` and `Trainer` API
+- **Precision management** - balancing performance and stability with BF16/FP16
+- **Evaluation metrics** and model checkpoint management
+
+### **Development Patterns**
+- **Interactive scripts** that prompt for user input rather than hardcoded examples
+- **Parameter experimentation** with exposed configuration options
+- **Efficient workflows** using dynamic padding and batched processing
+
+## Repository Structure
+
+```
+Learning-HF-LLMS/
+├── test_llama.py              # Text generation example
+├── fine_tune_sst2.ipynb       # BERT sentiment classification tutorial
+├── fine_tuning_notes.md       # Framework comparison and tips
+├── git_troubleshooting_summary.txt  # Git workflow solutions
+└── .github/
+    └── copilot-instructions.md # Project conventions and patterns
+```
+
+## Getting Started
+
+1. **Text Generation**: Run `test_llama.py` for interactive LLM experimentation
+2. **Fine-Tuning**: Follow `fine_tune_sst2.ipynb` for a complete training pipeline
+3. **Framework Selection**: Check `fine_tuning_notes.md` for tool recommendations
+
+## Integration Stack
+
+- **🤗 Transformers** - Core library for model loading and training
+- **📊 Datasets** - Data loading and preprocessing
+- **⚡ PEFT** - Parameter-efficient fine-tuning (LoRA/QLoRA)
+- **🔧 PyTorch** - Backend training framework
+
+## Lessons Learned
+
+- **Precision matters**: Mixed precision conflicts can break training - use consistent dtype configurations
+- **Device management**: `device_map="auto"` handles multi-GPU setups automatically
+- **Git hygiene**: Always exclude model folders in `.gitignore` before committing
+- **Interactive development**: Scripts work better when they prompt for user input
+
+---
+
+*This is a practical learning repository focused on working code and real solutions rather than theoretical best practices.*
